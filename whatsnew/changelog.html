@@ -1046,6 +1046,10 @@ opposed to forked).</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/93421">gh-93421</a>: Update <a class="reference internal" href="../library/sqlite3.html#sqlite3.Cursor.rowcount" title="sqlite3.Cursor.rowcount"><code class="xref py py-data docutils literal notranslate"><span class="pre">sqlite3.Cursor.rowcount</span></code></a> when a DML
 statement has run to completion. This fixes the row count for SQL queries
 like <code class="docutils literal notranslate"><span class="pre">UPDATE</span> <span class="pre">...</span> <span class="pre">RETURNING</span></code>. Patch by Erlend E. Aasland.</p></li>
+<li><p><a class="reference external" href="https://github.com/python/cpython/issues/93353">gh-93353</a>: Fix the <a class="reference internal" href="../library/importlib.html#importlib.resources.as_file" title="importlib.resources.as_file"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.resources.as_file()</span></code></a> context
+manager to remove the temporary file if destroyed late during Python
+finalization: keep a local reference to the <a class="reference internal" href="../library/os.html#os.remove" title="os.remove"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.remove()</span></code></a> function.
+Patch by Victor Stinner.</p></li>
 </ul>
 </section>
 <section id="documentation">
@@ -25668,7 +25672,7 @@ Kilburn.</p></li>
 <br />
     <br />
 
-    最後更新於 6月 12, 2022。
+    最後更新於 6月 14, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
