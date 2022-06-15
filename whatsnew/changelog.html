@@ -1043,6 +1043,8 @@ instead of silently ignore the 6th item or produce incorrect result.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/90549">gh-90549</a>: Fix a multiprocessing bug where a global named resource
 (such as a semaphore) could leak when a child process is spawned (as
 opposed to forked).</p></li>
+<li><p><a class="reference external" href="https://github.com/python/cpython/issues/79579">gh-79579</a>: <a class="reference internal" href="../library/sqlite3.html#module-sqlite3" title="sqlite3: A DB-API 2.0 implementation using SQLite 3.x."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code></a> now correctly detects DML queries with
+leading comments. Patch by Erlend E. Aasland.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/93421">gh-93421</a>: Update <a class="reference internal" href="../library/sqlite3.html#sqlite3.Cursor.rowcount" title="sqlite3.Cursor.rowcount"><code class="xref py py-data docutils literal notranslate"><span class="pre">sqlite3.Cursor.rowcount</span></code></a> when a DML
 statement has run to completion. This fixes the row count for SQL queries
 like <code class="docutils literal notranslate"><span class="pre">UPDATE</span> <span class="pre">...</span> <span class="pre">RETURNING</span></code>. Patch by Erlend E. Aasland.</p></li>
@@ -1055,6 +1057,8 @@ Patch by Victor Stinner.</p></li>
 <section id="documentation">
 <h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
+<li><p><a class="reference external" href="https://github.com/python/cpython/issues/87260">gh-87260</a>: Align <a class="reference internal" href="../library/sqlite3.html#module-sqlite3" title="sqlite3: A DB-API 2.0 implementation using SQLite 3.x."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code></a> argument specs with the actual
+implementation.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/86986">gh-86986</a>: The minimum Sphinx version required to build the
 documentation is now 3.2.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/88831">gh-88831</a>: Augmented documentation of asyncio.create_task().
@@ -25672,7 +25676,7 @@ Kilburn.</p></li>
 <br />
     <br />
 
-    最後更新於 6月 14, 2022。
+    最後更新於 6月 15, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

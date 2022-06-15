@@ -2252,10 +2252,10 @@ the interface:</p>
 <span class="c1"># Include IP headers</span>
 <span class="n">s</span><span class="o">.</span><span class="n">setsockopt</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">IPPROTO_IP</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">IP_HDRINCL</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># receive all packages</span>
+<span class="c1"># receive all packets</span>
 <span class="n">s</span><span class="o">.</span><span class="n">ioctl</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">SIO_RCVALL</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">RCVALL_ON</span><span class="p">)</span>
 
-<span class="c1"># receive a package</span>
+<span class="c1"># receive a packet</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">recvfrom</span><span class="p">(</span><span class="mi">65565</span><span class="p">))</span>
 
 <span class="c1"># disabled promiscuous mode</span>
@@ -2471,7 +2471,7 @@ want to refer to <span class="target" id="index-15"></span><a class="rfc referen
 <br />
     <br />
 
-    最後更新於 6月 14, 2022。
+    最後更新於 6月 15, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
