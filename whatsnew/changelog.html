@@ -1048,10 +1048,18 @@ leading comments. Patch by Erlend E. Aasland.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/93421">gh-93421</a>: Update <a class="reference internal" href="../library/sqlite3.html#sqlite3.Cursor.rowcount" title="sqlite3.Cursor.rowcount"><code class="xref py py-data docutils literal notranslate"><span class="pre">sqlite3.Cursor.rowcount</span></code></a> when a DML
 statement has run to completion. This fixes the row count for SQL queries
 like <code class="docutils literal notranslate"><span class="pre">UPDATE</span> <span class="pre">...</span> <span class="pre">RETURNING</span></code>. Patch by Erlend E. Aasland.</p></li>
+<li><p><a class="reference external" href="https://github.com/python/cpython/issues/91810">gh-91810</a>: Suppress writing an XML declaration in open files in
+<code class="docutils literal notranslate"><span class="pre">ElementTree.write()</span></code> with <code class="docutils literal notranslate"><span class="pre">encoding='unicode'</span></code> and
+<code class="docutils literal notranslate"><span class="pre">xml_declaration=None</span></code>.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/93353">gh-93353</a>: Fix the <a class="reference internal" href="../library/importlib.html#importlib.resources.as_file" title="importlib.resources.as_file"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.resources.as_file()</span></code></a> context
 manager to remove the temporary file if destroyed late during Python
 finalization: keep a local reference to the <a class="reference internal" href="../library/os.html#os.remove" title="os.remove"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.remove()</span></code></a> function.
 Patch by Victor Stinner.</p></li>
+<li><p><a class="reference external" href="https://github.com/python/cpython/issues/83658">gh-83658</a>: Make <code class="xref py py-class docutils literal notranslate"><span class="pre">multiprocessing.Pool</span></code> raise an exception if
+<code class="docutils literal notranslate"><span class="pre">maxtasksperchild</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> or a positive int.</p></li>
+<li><p><a class="reference external" href="https://github.com/python/cpython/issues/91577">gh-91577</a>: Move imports in <code class="xref py py-class docutils literal notranslate"><span class="pre">SharedMemory</span></code>
+methods to module level so that they can be executed late in python
+finalization.</p></li>
 </ul>
 </section>
 <section id="documentation">
@@ -25676,11 +25684,11 @@ Kilburn.</p></li>
 <br />
     <br />
 
-    最後更新於 6月 15, 2022。
+    最後更新於 6月 19, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.1 建立。
+    使用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2 建立。
     </div>
 
   </body>
