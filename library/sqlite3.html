@@ -580,25 +580,24 @@ or its subclasses.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sqlite3.Connection.commit">
 <span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Connection.commit" title="本定義的永久連結">¶</a></dt>
-<dd><p>This method commits the current transaction. If you don't call this method,
-anything you did since the last call to <code class="docutils literal notranslate"><span class="pre">commit()</span></code> is not visible from
-other database connections. If you wonder why you don't see the data you've
-written to the database, please check you didn't forget to call this method.</p>
+<dd><p>Commit any pending transaction to the database.
+If there is no open transaction, this method is a no-op.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sqlite3.Connection.rollback">
 <span class="sig-name descname"><span class="pre">rollback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Connection.rollback" title="本定義的永久連結">¶</a></dt>
-<dd><p>This method rolls back any changes to the database since the last call to
-<a class="reference internal" href="#sqlite3.Connection.commit" title="sqlite3.Connection.commit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">commit()</span></code></a>.</p>
+<dd><p>Roll back to the start of any pending transaction.
+If there is no open transaction, this method is a no-op.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sqlite3.Connection.close">
 <span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Connection.close" title="本定義的永久連結">¶</a></dt>
-<dd><p>This closes the database connection. Note that this does not automatically
-call <a class="reference internal" href="#sqlite3.Connection.commit" title="sqlite3.Connection.commit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">commit()</span></code></a>. If you just close your database connection without
-calling <a class="reference internal" href="#sqlite3.Connection.commit" title="sqlite3.Connection.commit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">commit()</span></code></a> first, your changes will be lost!</p>
+<dd><p>Close the database connection.
+Any pending transaction is not committed implicitly;
+make sure to <a class="reference internal" href="#sqlite3.Connection.commit" title="sqlite3.Connection.commit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">commit()</span></code></a> before closing
+to avoid losing pending changes.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1776,11 +1775,22 @@ case-insensitively by name:</p>
 </div>
 </section>
 <section id="using-the-connection-as-a-context-manager">
-<h3>Using the connection as a context manager<a class="headerlink" href="#using-the-connection-as-a-context-manager" title="Permalink to this heading">¶</a></h3>
-<p>Connection objects can be used as context managers
-that automatically commit or rollback transactions.  In the event of an
-exception, the transaction is rolled back; otherwise, the transaction is
-committed:</p>
+<span id="sqlite3-connection-context-manager"></span><h3>Using the connection as a context manager<a class="headerlink" href="#using-the-connection-as-a-context-manager" title="Permalink to this heading">¶</a></h3>
+<p>A <a class="reference internal" href="#sqlite3.Connection" title="sqlite3.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> object can be used as a context manager that
+automatically commits or rolls back open transactions when leaving the body of
+the context manager.
+If the body of the <a class="reference internal" href="../reference/compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a> statement finishes without exceptions,
+the transaction is committed.
+If this commit fails,
+or if the body of the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement raises an uncaught exception,
+the transaction is rolled back.</p>
+<p>If there is no open transaction upon leaving the body of the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement,
+the context manager is a no-op.</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>The context manager neither implicitly opens a new transaction
+nor closes the connection.</p>
+</div>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 
 <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
@@ -1948,7 +1958,7 @@ extension support, you must pass the
 <br />
     <br />
 
-    最後更新於 6月 19, 2022。
+    最後更新於 6月 22, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

@@ -874,7 +874,7 @@ a signal handler) may on rare occasions put the program in an unexpected state.<
     <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># If KeyboardInterrupt occurs here, everything is fine</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
-        <span class="c1"># If KeyboardInterrupt occcurs here, __exit__ will not be called</span>
+        <span class="c1"># If KeyboardInterrupt occurs here, __exit__ will not be called</span>
         <span class="o">...</span>
         <span class="c1"># KeyboardInterrupt could occur just before the function returns</span>
 
@@ -1041,7 +1041,7 @@ of gracefully shutting down.  Instead, they should install their own
 <br />
     <br />
 
-    最後更新於 6月 19, 2022。
+    最後更新於 6月 22, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

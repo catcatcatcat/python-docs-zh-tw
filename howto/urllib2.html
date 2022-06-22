@@ -188,12 +188,13 @@
 <span id="urllib-howto"></span><h1>如何使用urllib套件取得網路資源<a class="headerlink" href="#howto-fetch-internet-resources-using-the-urllib-package" title="Permalink to this heading">¶</a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">作者<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="http://www.voidspace.org.uk/python/index.shtml">Michael Foord</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://agileabstractions.com/">Michael Foord</a></p>
 </dd>
 </dl>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>這份指南出自於早期版本的法文翻譯 <a class="reference external" href="http://www.voidspace.org.uk/python/articles/urllib2_francais.shtml">urllib2 - Le Manuel manquant</a>.</p>
+<p>There is a French translation of an earlier revision of this
+HOWTO, available at <a class="reference external" href="https://web.archive.org/web/20200910051922/http://www.voidspace.org.uk/python/articles/urllib2_francais.shtml">urllib2 - Le Manuel manquant</a>.</p>
 </div>
 <section id="introduction">
 <h2>簡介<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
@@ -201,7 +202,7 @@
 <p class="sidebar-title">Related Articles</p>
 <p>以下這些與Python有關的文章說不定能幫到你:</p>
 <ul>
-<li><p><a class="reference external" href="http://www.voidspace.org.uk/python/articles/authentication.shtml">Basic Authentication</a></p>
+<li><p><a class="reference external" href="https://web.archive.org/web/20201215133350/http://www.voidspace.org.uk/python/articles/authentication.shtml">Basic Authentication</a></p>
 <blockquote>
 <div><p>以Python為例的 <em>Basic Authentication</em> 教學。</p>
 </div></blockquote>
@@ -656,7 +657,7 @@ the <code class="docutils literal notranslate"><span class="pre">ProxyHandler</s
 setting is detected.  Normally that's a good thing, but there are occasions
 when it may not be helpful <a class="footnote-reference brackets" href="#id12" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>. One way to do this is to setup our own
 <code class="docutils literal notranslate"><span class="pre">ProxyHandler</span></code>, with no proxies defined. This is done using similar steps to
-setting up a <a class="reference external" href="http://www.voidspace.org.uk/python/articles/authentication.shtml">Basic Authentication</a> handler:</p>
+setting up a <a class="reference external" href="https://web.archive.org/web/20201215133350/http://www.voidspace.org.uk/python/articles/authentication.shtml">Basic Authentication</a> handler:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">proxy_support</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">ProxyHandler</span><span class="p">({})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">opener</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">proxy_support</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">install_opener</span><span class="p">(</span><span class="n">opener</span><span class="p">)</span>
@@ -868,7 +869,7 @@ the proxy.</p>
 <br />
     <br />
 
-    最後更新於 6月 19, 2022。
+    最後更新於 6月 22, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

@@ -286,7 +286,8 @@
 <span class="go">Jack: 4098; Sjoerd: 4127; Dcab: 8637678</span>
 </pre></div>
 </div>
-<p>用 '**' 符號，把 table 當作關鍵字引數來傳遞，也有一樣的結果。</p>
+<p>This could also be done by passing the <code class="docutils literal notranslate"><span class="pre">table</span></code> dictionary as keyword arguments with the <code class="docutils literal notranslate"><span class="pre">**</span></code>
+notation.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Sjoerd&#39;</span><span class="p">:</span> <span class="mi">4127</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">:</span> <span class="mi">4098</span><span class="p">,</span> <span class="s1">&#39;Dcab&#39;</span><span class="p">:</span> <span class="mi">8637678</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jack: </span><span class="si">{Jack:d}</span><span class="s1">; Sjoerd: </span><span class="si">{Sjoerd:d}</span><span class="s1">; Dcab: </span><span class="si">{Dcab:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">table</span><span class="p">))</span>
 <span class="go">Jack: 4098; Sjoerd: 4127; Dcab: 8637678</span>
@@ -599,7 +600,7 @@
 <br />
     <br />
 
-    最後更新於 6月 19, 2022。
+    最後更新於 6月 22, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
