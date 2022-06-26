@@ -806,8 +806,8 @@ supported.</p>
 <dl class="std opcode">
 <dt class="sig sig-object std" id="opcode-GET_ANEXT">
 <span class="sig-name descname"><span class="pre">GET_ANEXT</span></span><a class="headerlink" href="#opcode-GET_ANEXT" title="本定義的永久連結">¶</a></dt>
-<dd><p>Implements <code class="docutils literal notranslate"><span class="pre">PUSH(get_awaitable(TOS.__anext__()))</span></code>.  See <code class="docutils literal notranslate"><span class="pre">GET_AWAITABLE</span></code>
-for details about <code class="docutils literal notranslate"><span class="pre">get_awaitable</span></code></p>
+<dd><p>Pushes <code class="docutils literal notranslate"><span class="pre">get_awaitable(TOS.__anext__())</span></code> to the stack.  See
+<code class="docutils literal notranslate"><span class="pre">GET_AWAITABLE</span></code> for details about <code class="docutils literal notranslate"><span class="pre">get_awaitable</span></code>.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">在 3.5 版本新加入.</span></p>
 </div>
@@ -1798,7 +1798,7 @@ scopes or names in outer scopes that are referenced from this scope.  It does
 <br />
     <br />
 
-    最後更新於 6月 22, 2022。
+    最後更新於 6月 26, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
