@@ -1055,12 +1055,15 @@ before ':'</p></li>
 <section id="library">
 <h3>Library<a class="headerlink" href="#library" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
+<li><p><a class="reference external" href="https://github.com/python/cpython/issues/94254">gh-94254</a>: Fixed types of <a class="reference internal" href="../library/struct.html#module-struct" title="struct: Interpret bytes as packed binary data."><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code></a> module to be immutable. Patch
+by Kumar Aditya.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/94245">gh-94245</a>: Fix pickling and copying of <code class="docutils literal notranslate"><span class="pre">typing.Tuple[()]</span></code>.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/94207">gh-94207</a>: Made <code class="xref py py-class docutils literal notranslate"><span class="pre">_struct.Struct</span></code> GC-tracked in order to fix a
 reference leak in the <code class="xref py py-mod docutils literal notranslate"><span class="pre">_struct</span></code> module.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/94101">gh-94101</a>: Manual instantiation of <a class="reference internal" href="../library/ssl.html#ssl.SSLSession" title="ssl.SSLSession"><code class="xref py py-class docutils literal notranslate"><span class="pre">ssl.SSLSession</span></code></a> objects is
 no longer allowed as it lead to misconfigured instances that crashed the
 interpreter when attributes where accessed on them.</p></li>
+<li><p><a class="reference external" href="https://github.com/python/cpython/issues/83499">gh-83499</a>: Fix double closing of file description in <a class="reference internal" href="../library/tempfile.html#module-tempfile" title="tempfile: Generate temporary files and directories."><code class="xref py py-mod docutils literal notranslate"><span class="pre">tempfile</span></code></a>.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/79512">gh-79512</a>: Fixed names and <code class="docutils literal notranslate"><span class="pre">__module__</span></code> value of <a class="reference internal" href="../library/weakref.html#module-weakref" title="weakref: Support for weak references and weak dictionaries."><code class="xref py py-mod docutils literal notranslate"><span class="pre">weakref</span></code></a>
 classes <a class="reference internal" href="../library/weakref.html#weakref.ReferenceType" title="weakref.ReferenceType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReferenceType</span></code></a>, <a class="reference internal" href="../library/weakref.html#weakref.ProxyType" title="weakref.ProxyType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxyType</span></code></a>,
 <a class="reference internal" href="../library/weakref.html#weakref.CallableProxyType" title="weakref.CallableProxyType"><code class="xref py py-class docutils literal notranslate"><span class="pre">CallableProxyType</span></code></a>. It makes them pickleable.</p></li>
@@ -25733,7 +25736,7 @@ Kilburn.</p></li>
 <br />
     <br />
 
-    最後更新於 6月 26, 2022。
+    最後更新於 6月 27, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
