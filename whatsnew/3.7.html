@@ -506,7 +506,7 @@ choice.  Set <code class="docutils literal notranslate"><span class="pre">PYTHON
 <p>While Python provides a C API for thread-local storage support; the existing
 <a class="reference internal" href="../c-api/init.html#thread-local-storage-api"><span class="std std-ref">Thread Local Storage (TLS) API</span></a> has used
 <span class="xref c c-texpr"><span class="kt">int</span></span> to represent TLS keys across all platforms.  This has not
-generally been a problem for officially-support platforms, but that is neither
+generally been a problem for officially support platforms, but that is neither
 POSIX-compliant, nor portable in any practical sense.</p>
 <p><span class="target" id="index-14"></span><a class="pep reference external" href="https://peps.python.org/pep-0539/"><strong>PEP 539</strong></a> changes this by providing a new <a class="reference internal" href="../c-api/init.html#thread-specific-storage-api"><span class="std std-ref">Thread Specific Storage (TSS)
 API</span></a> to CPython which supersedes use of the
@@ -1225,7 +1225,7 @@ callbacks to be executed at process fork.
 of <a class="reference internal" href="../library/os.html#os.writev" title="os.writev"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.writev()</span></code></a> and <a class="reference internal" href="../library/os.html#os.pwrite" title="os.pwrite"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.pwrite()</span></code></a>). (Contributed by Pablo Galindo in
 <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=31368">bpo-31368</a>.)</p>
 <p>The mode argument of <a class="reference internal" href="../library/os.html#os.makedirs" title="os.makedirs"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.makedirs()</span></code></a> no longer affects the file
-permission bits of newly-created intermediate-level directories.
+permission bits of newly created intermediate-level directories.
 (Contributed by Serhiy Storchaka in <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=19930">bpo-19930</a>.)</p>
 <p><a class="reference internal" href="../library/os.html#os.dup2" title="os.dup2"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.dup2()</span></code></a> now returns the new file descriptor.  Previously, <code class="docutils literal notranslate"><span class="pre">None</span></code>
 was always returned.
@@ -2122,7 +2122,7 @@ Assigning to them was deprecated in Python 3.5.
 Use the <a class="reference internal" href="../library/http.cookies.html#http.cookies.Morsel.set" title="http.cookies.Morsel.set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set()</span></code></a> method for setting them.
 (Contributed by Serhiy Storchaka in <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=29192">bpo-29192</a>.)</p></li>
 <li><p>The <em>mode</em> argument of <a class="reference internal" href="../library/os.html#os.makedirs" title="os.makedirs"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.makedirs()</span></code></a> no longer affects the file
-permission bits of newly-created intermediate-level directories.
+permission bits of newly created intermediate-level directories.
 To set their file permission bits you can set the umask before invoking
 <code class="docutils literal notranslate"><span class="pre">makedirs()</span></code>.
 (Contributed by Serhiy Storchaka in <a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=19930">bpo-19930</a>.)</p></li>
@@ -2594,7 +2594,7 @@ documentation.
 <br />
     <br />
 
-    最後更新於 6月 27, 2022。
+    最後更新於 7月 06, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
