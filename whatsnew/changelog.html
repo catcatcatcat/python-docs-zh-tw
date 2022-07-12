@@ -1039,6 +1039,9 @@ backing buffer in certain cases.</p></li>
 <section id="core-and-builtins">
 <h3>Core and Builtins<a class="headerlink" href="#core-and-builtins" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
+<li><p><a class="reference external" href="https://github.com/python/cpython/issues/94329">gh-94329</a>: Compile and run code with unpacking of extremely large
+sequences (1000s of elements). Such code failed to compile. It now
+compiles and runs correctly.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/94360">gh-94360</a>: Fixed a tokenizer crash when reading encoded files with
 syntax errors from <code class="docutils literal notranslate"><span class="pre">stdin</span></code> with non utf-8 encoded text. Patch by Pablo
 Galindo</p></li>
@@ -1061,6 +1064,11 @@ before ':'</p></li>
 <section id="library">
 <h3>Library<a class="headerlink" href="#library" title="Permalink to this heading">¶</a></h3>
 <ul>
+<li><p><a class="reference external" href="https://github.com/python/cpython/issues/94736">gh-94736</a>: Fix crash when deallocating an instance of a subclass of
+<code class="docutils literal notranslate"><span class="pre">_multiprocessing.SemLock</span></code>. Patch by Kumar Aditya.</p></li>
+<li><p><a class="reference external" href="https://github.com/python/cpython/issues/94637">gh-94637</a>: <code class="xref py py-meth docutils literal notranslate"><span class="pre">SSLContext.set_default_verify_paths()</span></code> now releases
+the GIL around <code class="docutils literal notranslate"><span class="pre">SSL_CTX_set_default_verify_paths</span></code> call. The function
+call performs I/O and CPU intensive work.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/94510">gh-94510</a>: Re-entrant calls to <a class="reference internal" href="../library/sys.html#sys.setprofile" title="sys.setprofile"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.setprofile()</span></code></a> and
 <a class="reference internal" href="../library/sys.html#sys.settrace" title="sys.settrace"><code class="xref py py-func docutils literal notranslate"><span class="pre">sys.settrace()</span></code></a> now raise <a class="reference internal" href="../library/exceptions.html#RuntimeError" title="RuntimeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">RuntimeError</span></code></a>. Patch by Pablo
 Galindo.</p></li>
@@ -1121,6 +1129,8 @@ longname directories.</p></li>
 <code class="xref py py-class docutils literal notranslate"><span class="pre">LogRecord</span></code> to prevent stack trace from being written twice.</p></li>
 <li><p><a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=46197">bpo-46197</a>: Fix <a class="reference internal" href="../library/ensurepip.html#module-ensurepip" title="ensurepip: Bootstrapping the &quot;pip&quot; installer into an existing Python installation or virtual environment."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ensurepip</span></code></a> environment isolation for subprocess
 running <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p></li>
+<li><p><a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=45924">bpo-45924</a>: Fix <a class="reference internal" href="../library/asyncio.html#module-asyncio" title="asyncio: Asynchronous I/O."><code class="xref py py-mod docutils literal notranslate"><span class="pre">asyncio</span></code></a> incorrect traceback when future's exception
+is raised multiple times. Patch by Kumar Aditya.</p></li>
 <li><p><a class="reference external" href="https://bugs.python.org/issue?&#64;action=redirect&amp;bpo=34828">bpo-34828</a>: <a class="reference internal" href="../library/sqlite3.html#sqlite3.Connection.iterdump" title="sqlite3.Connection.iterdump"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sqlite3.Connection.iterdump()</span></code></a> now handles databases that
 use <code class="docutils literal notranslate"><span class="pre">AUTOINCREMENT</span></code> in one or more tables.</p></li>
 </ul>
@@ -25788,7 +25798,7 @@ Kilburn.</p></li>
 <br />
     <br />
 
-    最後更新於 7月 08, 2022。
+    最後更新於 7月 12, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
