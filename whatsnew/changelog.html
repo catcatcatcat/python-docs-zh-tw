@@ -1048,6 +1048,8 @@ expressions when passed <code class="docutils literal notranslate"><span class="
 Shantanu Jain.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/94869">gh-94869</a>: Fix the column offsets for some expressions in multi-line
 f-strings <a class="reference internal" href="../library/ast.html#module-ast" title="ast: Abstract Syntax Tree classes and manipulation."><code class="xref py py-mod docutils literal notranslate"><span class="pre">ast</span></code></a> nodes. Patch by Pablo Galindo.</p></li>
+<li><p><a class="reference external" href="https://github.com/python/cpython/issues/91153">gh-91153</a>: Fix an issue where a <a class="reference internal" href="../library/stdtypes.html#bytearray" title="bytearray"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> item assignment
+could crash if it's resized by the new value's <code class="xref py py-meth docutils literal notranslate"><span class="pre">__index__()</span></code> method.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/94329">gh-94329</a>: Compile and run code with unpacking of extremely large
 sequences (1000s of elements). Such code failed to compile. It now
 compiles and runs correctly.</p></li>
@@ -1223,6 +1225,9 @@ C names in Argument Clinic. Patch by Erlend E. Aasland</p></li>
 <section id="c-api">
 <h3>C API<a class="headerlink" href="#c-api" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
+<li><p><a class="reference external" href="https://github.com/python/cpython/issues/94930">gh-94930</a>: Fix <code class="docutils literal notranslate"><span class="pre">SystemError</span></code> raised when
+<a class="reference internal" href="../c-api/arg.html#c.PyArg_ParseTupleAndKeywords" title="PyArg_ParseTupleAndKeywords"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyArg_ParseTupleAndKeywords()</span></code></a> is used with <code class="docutils literal notranslate"><span class="pre">#</span></code> in <code class="docutils literal notranslate"><span class="pre">(...)</span></code> but
+without <code class="docutils literal notranslate"><span class="pre">PY_SSIZE_T_CLEAN</span></code> defined.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/94864">gh-94864</a>: Fix <code class="docutils literal notranslate"><span class="pre">PyArg_Parse*</span></code> with deprecated format units &quot;u&quot; and
 &quot;Z&quot;. It returned 1 (success) when warnings are turned into exceptions.</p></li>
 </ul>
@@ -25821,7 +25826,7 @@ Kilburn.</p></li>
 <br />
     <br />
 
-    最後更新於 7月 19, 2022。
+    最後更新於 7月 23, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
