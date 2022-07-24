@@ -1075,6 +1075,8 @@ before ':'</p></li>
 <section id="library">
 <h3>Library<a class="headerlink" href="#library" title="Permalink to this heading">¶</a></h3>
 <ul>
+<li><p><a class="reference external" href="https://github.com/python/cpython/issues/93157">gh-93157</a>: Fix <a class="reference internal" href="../library/fileinput.html#module-fileinput" title="fileinput: Loop over standard input or a list of files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">fileinput</span></code></a> module didn't support <code class="docutils literal notranslate"><span class="pre">errors</span></code>
+option when <code class="docutils literal notranslate"><span class="pre">inplace</span></code> is true.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/94821">gh-94821</a>: Fix binding of unix socket to empty address on Linux to
 use an available address from the abstract namespace, instead of &quot;0&quot;.</p></li>
 <li><p><a class="reference external" href="https://github.com/python/cpython/issues/94736">gh-94736</a>: Fix crash when deallocating an instance of a subclass of
@@ -25826,7 +25828,7 @@ Kilburn.</p></li>
 <br />
     <br />
 
-    最後更新於 7月 23, 2022。
+    最後更新於 7月 24, 2022。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
